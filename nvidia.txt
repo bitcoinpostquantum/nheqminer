@@ -1,0 +1,38 @@
+## NVIDIA CUDA
+  First disable the Nouveau kernel driver by creating a new file:  
+    - `sudo nano /etc/modprobe.d/blacklist-nouveau.conf`
+  Add the following lines and then save and exit:
+    - `blacklist nouveau`
+    - `blacklist lbm-nouveau`
+    - `options nouveau modeset=0`
+    - `alias nouveau off`
+    - `alias lbm-nouveau off`
+  Next let’s update the initial RAM filesystem and reboot the machine:
+    - `echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf`
+    - `sudo update-initramfs -u`
+    - `sudo reboot`
+    - `sudo service lightdm stop`
+  You will want to download the CUDA Toolkit v9.2 via the NVIDIA CUDA Toolkit website:
+    https://developer.nvidia.com/cuda-toolkit-archive  
+    - `wget https://developer.nvidia.com/compute/cuda/9.2/Prod/local_installers/cuda_9.2.88_396.26_linux`
+    - `chmod +x cuda_9.2.88_396.26_linux`
+    - `mkdir nvidia.cuda`
+    - `sudo ./cuda_9.2.88_396.26_linux -extract=`pwd`/nvidia.cuda`
+    - `cd ./nvidia.cuda/`
+    - `sudo ./NVIDIA-Linux-x86_64-396.26.run`
+    - `modprobe nvidia`
+    - `sudo ./cuda-linux.9.2.88-23920284.run`
+    - `sudo ./cuda-samples.9.2.88-23920284-linux.run`
+    - `export PATH=/usr/local/cuda/bin:$PATH`
+    - `export LD_LIBRARY_PATH=/usr/local/cuda/lib64/`
+    - `source ~/.bashrc`
+    - `cd /usr/local/cuda/samples/1_Utilities/deviceQuery`
+    - `sudo make`
+    - `./deviceQuery`
+    - `nvidia-smi`
+
+  #  Second
+    - sudo apt-get purge nvidia-*
+    - sudo add-apt-repository ppa:graphics-drivers/ppa
+    - sudo apt-get update
+    - sudo apt install nvidia-396
