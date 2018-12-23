@@ -33,7 +33,7 @@
 	sudo apt-get install cmake3
 	sudo apt-get install gcc-5 g++-5
 	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
-	git clone https://bitbucket.org/kfginternational/nheqminer.git
+	git clone https://github.com/bitcoinpostquantum/nheqminer
 	cd nheqminer
 	mkdir build && cd build
 	cmake ..
@@ -62,22 +62,22 @@ NVIDIA CUDA settings
 Example: -cd 0 2 -cb 12 16 -ct 64 128
   
 Example to mine on your CPU with your own BPQ address and worker1 on BPQ TESTNET server:
-- testnet:
-        `nheqminer -l pool.testnet.bitcoinpq.org:3857 -u BPQ_TESTNET_ADDRESS_HERE.worker1`
 - mainnet:
         `nheqminer -l pool.mainnet.bitcoinpq.org:3857 -u BPQ_MAINNET_ADDRESS_HERE.worker1`        
+- testnet:
+        `nheqminer -l pool.testnet.bitcoinpq.org:3858 -u BPQ_TESTNET_ADDRESS_HERE.worker1`
 
 Example to mine on your CPU with your own BPQ address and worker1 on BPQ server, using 6 threads:
-- testnet:
-        `nheqminer -l pool.testnet.bitcoinpq.org:3857 -u BPQ_TESTNET_ADDRESS_HERE.worker1 -t 6`
 - mainnet:
         `nheqminer -l pool.mainnet.bitcoinpq.org:3857 -u BPQ_MAINNET_ADDRESS_HERE.worker1 -t 6`
+- testnet:
+        `nheqminer -l pool.testnet.bitcoinpq.org:3858 -u BPQ_TESTNET_ADDRESS_HERE.worker1 -t 6`
 
 <i>Note: if you have a 4-core CPU with hyper threading enabled (total 8 threads) it is best to run with only 6 threads (experimental benchmarks shows that best results are achieved with 75% threads utilized)</i>
 
 Example to mine on your CPU as well on your CUDA GPUs with your own BPQ address and worker1, using 6 CPU threads and 2 CUDA GPUs:
-- testnet:
-        `nheqminer -l pool.testnet.bitcoinpq.org:3857 -u BPQ_TESTNET_ADDRESS_HERE.worker1 -t 6 -cd 0 1`
 - mainnet:
         `nheqminer -l pool.mainnet.bitcoinpq.org:3857 -u BPQ_MAINNET_ADDRESS_HERE.worker1 -t 6 -cd 0 1`
+- testnet:
+        `nheqminer -l pool.testnet.bitcoinpq.org:3858 -u BPQ_TESTNET_ADDRESS_HERE.worker1 -t 6 -cd 0 1`
 
