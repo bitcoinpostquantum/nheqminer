@@ -16,11 +16,11 @@
     sudo apt install nvidia-cuda-toolkit
     ````
 
-  - install Boost 1.62+
+  - install Boost 1.62
 	````
-	wget -O boost_1_60_0.tar.gz https://sourceforge.net/projects/boost/files/boost/1.60.0/boost_1_60_0.tar.gz/download
-	tar xvfz boost_1_60_0.tar.gz
-	cd boost_1_60_0
+	wget https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.gz
+	tar xvfz boost_1_62_0.tar.gz
+	cd boost_1_62_0
 	./bootstrap.sh --prefix=/usr/
 	./b2 --show-libraries
 	sudo ./b2 --with-system --with-log --with-date_time --with-filesystem --with-thread install
