@@ -61,23 +61,9 @@ NVIDIA CUDA settings
 	-ct [tpb]	Number of threads per block
 Example: -cd 0 2 -cb 12 16 -ct 64 128
   
-Example to mine on your CPU with your own BPQ address and worker1 on BPQ TESTNET server:
+Example to mine on your CUDA GPUs with your own BPQ address and worker1, using 2 CUDA GPUs:
 - mainnet:
-        `nheqminer -l pool.mainnet.bitcoinpq.org:3857 -u BPQ_MAINNET_ADDRESS_HERE.worker1`        
+        `nheqminer -l pool.mainnet.bitcoinpq.org:3857 -u BPQ_MAINNET_ADDRESS_HERE.worker1 -cd 0 1`
 - testnet:
-        `nheqminer -l pool.testnet.bitcoinpq.org:3858 -u BPQ_TESTNET_ADDRESS_HERE.worker1`
-
-Example to mine on your CPU with your own BPQ address and worker1 on BPQ server, using 6 threads:
-- mainnet:
-        `nheqminer -l pool.mainnet.bitcoinpq.org:3857 -u BPQ_MAINNET_ADDRESS_HERE.worker1 -t 6`
-- testnet:
-        `nheqminer -l pool.testnet.bitcoinpq.org:3858 -u BPQ_TESTNET_ADDRESS_HERE.worker1 -t 6`
-
-<i>Note: if you have a 4-core CPU with hyper threading enabled (total 8 threads) it is best to run with only 6 threads (experimental benchmarks shows that best results are achieved with 75% threads utilized)</i>
-
-Example to mine on your CPU as well on your CUDA GPUs with your own BPQ address and worker1, using 6 CPU threads and 2 CUDA GPUs:
-- mainnet:
-        `nheqminer -l pool.mainnet.bitcoinpq.org:3857 -u BPQ_MAINNET_ADDRESS_HERE.worker1 -t 6 -cd 0 1`
-- testnet:
-        `nheqminer -l pool.testnet.bitcoinpq.org:3858 -u BPQ_TESTNET_ADDRESS_HERE.worker1 -t 6 -cd 0 1`
+        `nheqminer -l pool.testnet.bitcoinpq.org:3858 -u BPQ_TESTNET_ADDRESS_HERE.worker1 -cd 0 1`
 
