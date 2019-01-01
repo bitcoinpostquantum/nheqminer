@@ -12,8 +12,8 @@
     sudo apt-get purge nvidia-*
     sudo add-apt-repository ppa:graphics-drivers/ppa
     sudo apt-get update
-    sudo apt install nvidia-396
     sudo apt install nvidia-cuda-toolkit
+    sudo ubuntu-drivers autoinstall
     ````
 
   - install Boost 1.62
